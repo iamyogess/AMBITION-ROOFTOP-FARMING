@@ -1,39 +1,49 @@
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/auth";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 
 const Login = () => {
-  const [login, setLogin] = useState({
+  const navigate = useNavigate();
+
+  const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
 
-  const navigate = useNavigate();
+  // Get authentication state and setAuth function from context
+  const [auth, setAuth] = useAuth();
 
-  const handleEmailChange = (e) => {
-    const { value } = e.target;
-    setLogin((prev) => ({ ...prev, email: value }));
+  // Function to handle changes in form inputs
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setLoginData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handlePasswordChange = (e) => {
-    const { value } = e.target;
-    setLogin((prev) => ({ ...prev, password: value }));
-  };
-
+  // Function to handle form submission
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/v1/user/login",
-        login
+        "http://localhost:8000/api/v1/user/login/",
+        loginData
       );
-      if (res.data.success === true) {
-        navigate("/");
+      if (res && res.data.success) {
+        // Update authentication state upon successful login
+        setAuth({
+          ...auth,
+          user: res.data.user,
+          token: res.data.token,
+        });
+        localStorage.setItem("auth", JSON.stringify(res.data));
+        navigate( "/user-dashboard/user");
+      } else {
+        console.error(res.data.message);
       }
     } catch (error) {
-      console.log(error);
-      toast.error("Something went wrong!");
+      console.error(error);
+      alert("Something went wrong!");
     }
   };
 
@@ -61,17 +71,22 @@ const Login = () => {
           >
             <input
               type="text"
+              name="email"
               className="py-2 px-6 border border-gray-300 "
               placeholder="Enter your email."
-              onChange={handleEmailChange}
+              onChange={handleChange}
             />
             <input
               type="password" // Changed type to password
+              name="password"
               className="py-2 px-6 border border-gray-300 "
               placeholder="Enter your password."
-              onChange={handlePasswordChange} // Changed to handlePasswordChange
+              onChange={handleChange} // Changed to handlePasswordChange
             />
-            <button type="submit" className="py-2 px-6 bg-[#2AAA8A] text-white border border-transparent hover:border-[#2AAA8A]  hover:bg-transparent transition ease-in-out duration-300 hover:text-[#2AAA8A]">
+            <button
+              type="submit"
+              className="py-2 px-6 bg-[#2AAA8A] text-white border border-transparent hover:border-[#2AAA8A]  hover:bg-transparent transition ease-in-out duration-300 hover:text-[#2AAA8A]"
+            >
               Login
             </button>
           </form>

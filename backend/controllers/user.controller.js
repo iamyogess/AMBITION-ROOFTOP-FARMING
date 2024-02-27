@@ -105,9 +105,18 @@ const userLoginController = async (req, res) => {
         process.env.JWT_SECRET,
         { expiresIn: "5d" }
       );
-      return res
-        .status(200)
-        .json({ success: true, message: "Login successful!", token: token });
+      return res.status(200).json({
+        success: true,
+        message: "Login successful!",
+        token: token,
+        user: {
+          name: registeredUser.fullName,
+          email: registeredUser.email,
+          houseNo: registeredUser.houseNo,
+          isAdmin: registeredUser.isAdmin,
+          wardNo: registeredUser.wardNo,
+        },
+      });
     }
   } catch (error) {
     return res
