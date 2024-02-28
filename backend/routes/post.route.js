@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  getUserPost,
   userDeleteController,
   userPostController,
   userUpdateController,
@@ -8,7 +9,9 @@ import { isAdmin, requireSignIn } from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
 
-router.post("/add-post", userPostController);
+router.post("/add-post", requireSignIn, userPostController);
+
+router.get("/get-post", getUserPost);
 
 router.delete("/:id", requireSignIn, isAdmin, userDeleteController);
 

@@ -56,3 +56,15 @@ export const userUpdateController = async (req, res) => {
     return res.status(500).json({ message: "Unable to update post" });
   }
 };
+
+export const getUserPost = async (req, res) => {
+  try {
+    const posts = await UserPostModel.find().sort({ createdAt: -1 });
+    return res.status(200).json({ success: true, posts });
+  } catch (error) {
+    console.error("Error fetching user posts:", error);
+    return res
+      .status(500)
+      .json({ success: false, message: "Internal server error!" });
+  }
+};
