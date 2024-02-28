@@ -125,4 +125,17 @@ const userLoginController = async (req, res) => {
   }
 };
 
-export { userRegistrationController, userLoginController };
+const useProfileController = async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const userProfile = await UserModel.findById(userId).select("fullName");
+    return res.status(200).json({ success: true, profile: userProfile });
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ success: false, message: "Error fetching profile!" });
+  }
+};
+
+
+export { userRegistrationController, userLoginController,useProfileController };

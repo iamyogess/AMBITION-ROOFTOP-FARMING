@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  useProfileController,
   userLoginController,
   userRegistrationController,
 } from "../controllers/user.controller.js";
@@ -13,6 +14,8 @@ router.post("/signup", userRegistrationController);
 
 //user login controller
 router.post("/login", userLoginController);
+
+router.get("/profile/:id", useProfileController);
 
 //user auth check // private route
 router.get("/user-auth", requireSignIn, (req, res) => {
