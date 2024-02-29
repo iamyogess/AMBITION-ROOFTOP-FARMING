@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import rooftop from "../../assets/KitchenWasteAssets/rooftop.jpg";
 import wastephoto from "../../assets/KitchenWasteAssets/watseg.jpg";
 import fohor from "../../assets/KitchenWasteAssets/fohor1.jpg";
 import cookingasfamily from "../../assets/KitchenWasteAssets/cookingasfamily.jpg";
@@ -8,8 +10,14 @@ import fruits from "../../assets/KitchenWasteAssets/fruits.jpg";
 
 import saveplanet from "../../assets/KitchenWasteAssets/saveplanet.jpg";
 import garbagewaste from "../../assets/KitchenWasteAssets/garbagewaste.jpg";
-import rooftop from "../../assets/KitchenWasteAssets/rooftop.jpg";
-import { Link } from "react-router-dom";
+import downarrow from "../../assets/KitchenWasteAssets/down arrow.svg";
+import uparrow from "../../assets/KitchenWasteAssets/up arrow.svg";
+
+import first from "../../assets/KitchenWasteAssets/1.svg";
+import second from "../../assets/KitchenWasteAssets/2.svg";
+import third from "../../assets/KitchenWasteAssets/3.svg";
+import fourth from "../../assets/KitchenWasteAssets/4.svg";
+import fifth from "../../assets/KitchenWasteAssets/5.svg";
 
 const KitchenWaste = () => {
   return (
@@ -32,8 +40,8 @@ const KitchenWaste = () => {
                 className="w-full h-full object-cover mb-2"
               />
               <p className="text-center">
-                Kathmandu valley produces 1,200 metric tons of garbage on a
-                daily basis which at least 200 trucks laden with waste from the
+                Kathmandu valley produces 1,100 metric tons of garbage on a
+                daily basis which at least 100 trucks laden with waste from the
                 valley ferry waste on a daily basis.
               </p>
             </div>
@@ -80,9 +88,9 @@ const KitchenWaste = () => {
             kitchen waste or scraps.{" "}
           </p>
           <div className="flex justify-around items-center py-10">
-            <img src={fruits} alt="" className="h-[200px] w-[200px]" />
-            <img src={rightarrow} alt="" className="h-[200px] w-[200px]" />
-            <img src={packet} alt="" className="h-[200px] w-[200px]" />
+            <img src={fruits} alt="" className="h-[100px] w-[100px]" />
+            <img src={rightarrow} alt="" className="h-[100px] w-[100px]" />
+            <img src={packet} alt="" className="h-[100px] w-[100px]" />
           </div>
         </div>
       </section>
@@ -114,38 +122,67 @@ const KitchenWaste = () => {
       </section>
 
       <section className="py-10 bg-[#2AAA8A]">
-        <div>
+        <div className="p-4">
           <h1 className="text-center text-3xl font-bold text-white">
             Art of Kitchen Waste Composting
           </h1>
           <div className="py-5">
             <div className="flex justify-around items-center py-5">
-              <div>
-                <img src="" alt="" />
-                <p>hello</p>
+              <div className="flex justify-center items-center flex-col">
+                <img src={first} alt="" className="h-[200px] w-2100px]" />
+                <p className="text-center text-white regular-18">
+                  <span className="bold-18">(STEP-1)</span>: Choose a
+                  well-aerated bin with <br /> a lid, ideally placed in a <br />
+                  shady area.
+                </p>
               </div>
-              <div>
-                <img src="" alt="" />
-                <p>hello</p>
+              <div className="flex justify-center items-center flex-col">
+                <img src={second} alt="" className="h-[200px] w-[200px]" />
+                <p className="text-center text-white regular-18">
+                  <span className="bold-18">(STEP-2)</span>: Use vegetable and
+                  fruit peels, <br />
+                  eggshells,coffee grounds,and <br />
+                  tea bags (avoid meat, <br />
+                  dairy,and oily waste).
+                </p>
               </div>
-              <div>
-                <img src="" alt="" />
-                <p>hello</p>
+              <div className="flex justify-center items-center flex-col">
+                <img src={third} alt="" className="h-[200px] w-[200px]" />
+                <p className="text-center text-white regular-18">
+                  <span className="bold-18">(STEP-3)</span>: Alternate layers of
+                  green <br />
+                  (kitchen waste)and brown materials, <br />
+                  ensuring proper air circulation.
+                </p>
               </div>
+            
             </div>
 
             <div className="flex justify-around items-center py-5">
               <div>
-                <img src="" alt="" />
-                <p>hello</p>
+                <img src={uparrow} alt="" className="h-[100px] w-[100px]" />
+              </div>
+              <div className="flex justify-center items-center flex-col">
+                <img src={fifth} alt="" className="h-[200px] w-[200px]" />
+                <p className="text-center text-white regular-18">
+                  <span className="bold-18">(STEP-5)</span>: Allow the compost
+                  to decompose fully,
+                  <br /> which can take several months,
+                  <br /> until it has a dark,crumbly <br />
+                  texture and earthy smell.
+                </p>
+              </div>
+              <div className="flex justify-center items-center flex-col">
+                <img src={fourth} alt="" className="h-[200px] w-[200px]" />
+                <p className="text-center text-white regular-18">
+                  <span className="bold-18">(STEP-4)</span>: Regularly turn the
+                  compost pile <br />
+                  with a shovel or pitchfork to <br />
+                  aerate it and promote decomposition.
+                </p>
               </div>
               <div>
-                <img src="" alt="" />
-                <p>hello</p>
-              </div>
-              <div>
-                <img src="" alt="" />
-                <p>hello</p>
+                <img src={downarrow} alt="" className="h-[100px] w-[100px] transform rotate-90" />
               </div>
             </div>
           </div>
@@ -155,7 +192,12 @@ const KitchenWaste = () => {
       <section className="py-10">
         <div className="py-10 text-center">
           Now lets use this compost in our{" "}
-          <Link className="p-1 rounded-lg bg-[#2AAA8A] text-white" to="/rooftop-farming">rooftop farming.</Link>
+          <Link
+            className="p-1 rounded-lg bg-[#2AAA8A] text-white"
+            to="/rooftop-farming"
+          >
+            rooftop farming.
+          </Link>
         </div>
       </section>
     </div>

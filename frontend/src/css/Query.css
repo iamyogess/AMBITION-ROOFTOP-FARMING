@@ -1,0 +1,17 @@
+.forum form textarea {
+  padding: 8px 12px;
+  width: 100%;
+  resize: none;
+  background-color: #f3f2f5;
+  border: none;
+  height: 40px;
+  border-radius: 50px;
+  margin-right: 6px;
+}
+.forum form .user-icon {
+  background-color: #f3f2f5;
+  border-radius: 50%;
+  text-align: center;
+  padding: 9px 14px;
+  margin-right: 6px;
+}

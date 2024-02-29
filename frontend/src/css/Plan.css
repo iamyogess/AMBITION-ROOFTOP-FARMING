@@ -1,0 +1,40 @@
+.plan h5 {
+  position: relative;
+  display: inline-block;
+}
+.plan h5 a {
+  font-weight: 600;
+  font-size: 28px;
+  position: relative;
+  display: inline-block;
+}
+.plan h5 a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -12px;
+  left: 0;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s; /* Add transition for smooth effect */
+}
+.plan h5 a:hover::before {
+  width: 70%; /* Extend border from left to right */
+  background: #fff; /* Change background color when hovered */
+}
+.plan-left .left-bg {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(https://htmldemo.zcubethemes.com/dcfarm/img/bg/services-10.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://htmldemo.zcubethemes.com/dcfarm/img/bg/services-10.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+.plan-right .right-bg {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(https://htmldemo.zcubethemes.com/dcfarm/img/blog/blog9.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://htmldemo.zcubethemes.com/dcfarm/img/blog/blog9.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}

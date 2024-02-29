@@ -1,0 +1,41 @@
+.team {
+  padding: 40px 0;
+  background-color: #fff;
+}
+.team .underline {
+  text-decoration: none;
+  position: relative;
+  font-size: 32px;
+}
+.team .underline span {
+  font-weight: 500;
+}
+.team .underline:after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  bottom: -4px;
+  margin: -8px auto;
+  left: 34rem;
+  width: 5%;
+  border-radius: 20%;
+  background: gold;
+}
+.team .underline:hover:after {
+  width: 10%;
+  background: goldenrod;
+  -webkit-transition: all 0.9s;
+  transition: all 0.9s;
+}
+.team-slides {
+  width: 50%;
+}
+.team-slides-member {
+  width: 23%;
+}
+.team-slides-message p {
+  line-height: 28px;
+}
+.team-slides-name h5 {
+  font-weight: 600;
+}

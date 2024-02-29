@@ -1,0 +1,27 @@
+.faq {
+  position: relative;
+  padding: 90px 0px 0px 0px;
+  height: 96vh;
+}
+.faq-left-img {
+  background-image: url("https://techsometimes.com/products/wp/farmuswp/wp-content/uploads/2024/01/left-img.jpg");
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  left: -5vw;
+  width: 63vw;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: -4vw 0px;
+  background-size: cover;
+  border-radius: 0px;
+  z-index: -1;
+  margin-bottom: 0px;
+}

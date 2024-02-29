@@ -1,0 +1,23 @@
+h3 a {
+  font-size: 2.4rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+h3 a:hover::before {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  width: 55%;
+  background: #2AAA8A;
+}
+h3 a::before {
+  content: "";
+  position: absolute;
+  width: 28%;
+  height: 2px;
+  background: #2AAA8A;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: -15px;
+}

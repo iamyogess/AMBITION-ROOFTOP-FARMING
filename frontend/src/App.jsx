@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Page404notfound />} />
         <Route path="/kitchen-waste" element={<KitchenWaste />} />
-        <Route path="/test" element={<ButterflyLifeCycle />} />
+        {/* <Route path="/test" element={<ButterflyLifeCycle />} /> */}
 
         <Route path="/user-dashboard" element={<ProtectedRoute />}>
           <Route path="user" element={<UserDashboard />} />

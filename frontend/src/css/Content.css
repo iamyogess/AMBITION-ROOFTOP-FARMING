@@ -1,0 +1,10 @@
+.content-card {
+  overflow: hidden;
+}
+.content-card img {
+  -webkit-transition: 0.9s;
+  transition: 0.9s;
+}
+.content-card img:hover {
+  scale: 1.1;
+}
