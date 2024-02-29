@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import CommentModel from "../models/comment.model.js";
 import UserPostModel from "../models/post.model.js";
+import { UserModel } from "../models/user.model.js";
 
 export const createCommentController = async (req, res) => {
   try {

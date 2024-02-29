@@ -10,7 +10,7 @@ function FAQ() {
   }
 
   return (
-    <div className="faq max-container padding-container">
+    <div className="faq max-container padding-container mx-auto">
       <div className="container ">
         <div className="grid grid-cols-2">
           <div className="faq-left">

@@ -60,7 +60,7 @@ export const userUpdateController = async (req, res) => {
 export const getUserPost = async (req, res) => {
   try {
     const posts = await UserPostModel.find().sort({ createdAt: -1 });
-    return res.status(200).json({ success: true, posts });
+    return res.status(200).json({ success: true, qus:posts });
   } catch (error) {
     console.error("Error fetching user posts:", error);
     return res

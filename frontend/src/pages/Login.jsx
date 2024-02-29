@@ -37,7 +37,7 @@ const Login = () => {
           token: res.data.token,
         });
         localStorage.setItem("auth", JSON.stringify(res.data));
-        navigate( "/user-dashboard/user");
+        navigate( "/");
       } else {
         console.error(res.data.message);
       }

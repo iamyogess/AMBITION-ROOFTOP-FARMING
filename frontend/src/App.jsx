@@ -8,7 +8,6 @@ import Page404notfound from "./pages/404notFound/Page404notfound";
 import Dashboard from "./pages/admin/Dashboard";
 import ProtectedAdminRoute from "./components/Routes/ProtectedAdminRoute";
 import KitchenWaste from "./pages/KitchenWaste/KitchenWaste";
-import ButterflyLifeCycle from "./pages/ButterflyLifeCycle";
 
 const App = () => {
   return (
@@ -19,7 +18,6 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Page404notfound />} />
         <Route path="/kitchen-waste" element={<KitchenWaste />} />
-        {/* <Route path="/test" element={<ButterflyLifeCycle />} /> */}
 
         <Route path="/user-dashboard" element={<ProtectedRoute />}>
           <Route path="user" element={<UserDashboard />} />
