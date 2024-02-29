@@ -16,7 +16,6 @@ export const requireSignIn = async (req, res, next) => {
 };
 
 //admin
-
 export const isAdmin = async (req, res, next) => {
   try {
     const user = await UserModel.findById(req.user._id);
